@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# this command finds n number of last modified files
+
+new_files=$(find . -type d -path '*/.*' -prune -o -not -name '.*' -printf '%T@ %p\n' | sort -n | tail -$1 | cut -d " " -f 2- | xargs basename -a)
+
+# add files
+git add $new_files
+echo "Added the following files: $new_files"
+
+# commit files to push
+read -p "Enter your commit message -> " commit_message
+git commit -m "$commit_message"
+echo "Committed $new_files with this message: $commit_message"
+
+# push to github
+read -p "Enter the github repo name for this action -> " namedir
+git push https://[PASS_KEY]@github.com/Nadira3/$namedir.git

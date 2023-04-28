@@ -1,0 +1,5 @@
+#!/bin/bash
+read -p "Enter your answer -> " ANS
+echo -e "#!/bin/bash\n$ANS" > $1
+chmod u+x $1
+ls; cat $1

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# script to initialize git in a new repository
+
+read -p "Enter the name of your directory -> " namedir
+git init
+read -p "Enter your readme text -> " readme
+touch README.md
+echo $readme > README.md
+echo "README.md contains the following text: $(cat README.md)"
+git add README.md
+git commit -m "readme commit"
+git branch -M main && git branch
+remote_origin=git@github.com:Nadira3/$namedir
+echo $remote_origin
+git remote add origin $remote_origin.git
+git push https://[PASS_KEY]@github.com/Nadira3/$namedir.git
