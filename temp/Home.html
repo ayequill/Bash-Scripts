@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<title>AI Teaching Assistant</title>
+<link rel="stylesheet" href="/dist/css/App.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+  <div class="home">
+    <div class="heading">
+    <h1>AI T.A</h1>
+  </div>
+    <p class="welcome__text">
+      We provide you assistant to AI Teaching Assisant where you can upload your reading PDF <br>
+      Then our AI TA will help to to summarize the reading <br>
+      You also have an option to ask questions related to the document you upload for our AI TA.
+    </p>
+    <form class="up" action="#">
+      <div class="fileName">
+        <a>No file selected</a>
+      </div>
+      <div class="file-search-button">
+        <label for="file-upload" class="custom-file-upload">
+          <i class="fa fa-search"></i>
+          Upload
+        </label>
+        <input id="file-upload" type="file" />
+      </div>
+    </form>
+    <div class="btn__group">
+    <button class="btn" type="button" name="summary" id="summary">Get summary</button> <br>
+    <button class="btn" type="button" name="qa" id="qa">Q&A with TA</button> <br>
+  </div>
+  </div>
+</div>
+</body>
+</html>
