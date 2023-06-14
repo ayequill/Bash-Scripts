@@ -5,9 +5,18 @@ handle_error() {
   echo "An error occurred. Exiting..."
   exit 1
 }
-
+install_dir="/usr/local/bin"
 # Trap errors and throw errors
 trap 'handle_error' ERR
+
+if [[ ! -f "$install_dir/push2git.sh" ]]; then
+  cp "$0" "$install_dir/push2git.sh"
+
+  echo "export PATH=\"\$PATH:$install_dir\"" >> ~/.bashrc
+  source ~/.bashrc
+
+  echo "Script installed successfully."
+fi
 
 echo "Enter the file(s) to add to Git (press Tab for suggestions):"
 # Using readline and compgen to suggest files to user
