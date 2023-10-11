@@ -1,13 +1,31 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Function to handle errors
 handle_error() {
   echo "An error occurred. Exiting..."
   exit 1
 }
 
+install_dir="/usr/bin"
+
+
 # Trap errors and throw errors
 trap 'handle_error' ERR
+
+if [ ! -f "$install_dir/pushme" ]; then
+
+  if [ $EUID -ne 0 ]; then
+  echo "This script must be run as root. Exiting..."
+  exit 1
+fi
+  echo "Installing script..."
+  cp "$0" "$install_dir/pushme"
+
+  echo "export PATH=\"\$PATH:$install_dir\"" >> ~/.bashrc
+  source ~/.bashrc
+
+  echo "Script installed successfully."
+  exit 0
+fi
 
 echo "Enter the file(s) to add to Git (press Tab for suggestions):"
 # Using readline and compgen to suggest files to user

@@ -15,8 +15,8 @@ These are simple Bash scripts that allows users to easily add files to a Git rep
 
 `gitts`
 
-- Add new files quicly. It adds the last modified file to the staging area.
-- Prompts user for a commit message.
+- Add new files quickly. It adds the last modified file to the staging area.
+- Prompts the user for a commit message.
 
 ## Getting Started
 
@@ -37,18 +37,27 @@ git clone https://https://github.com/Nadira3/Bash-Scripts.git
 ### Usage
 
 1. Navigate to the cloned repository directory:
+
    ```
    cd Bash-Scripts
    ```
 
 2. Make the script executable:
+
    ```
    chmod +x *.sh
    ```
 
 3. Run the script:
+
    ```
-   ./git_add_and_push.sh
+   ./push2git.sh
+   ```
+
+   If not root, run the script as root:
+
+   ```
+   sudo ./push2git.sh
    ```
 
 4. Follow the prompts to add files to Git, provide a commit message, and push the changes.
