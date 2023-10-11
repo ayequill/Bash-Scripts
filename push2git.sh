@@ -24,6 +24,7 @@ fi
   source ~/.bashrc
 
   echo "Script installed successfully."
+  echo "Run script as 'pushme' from any directory."
   exit 0
 fi
 
